@@ -1,4 +1,6 @@
-from pyspark import SparkContext
+ear
+
+rom pyspark import SparkContext
 
 def filterBike(pId, lines):
     import csv
@@ -38,8 +40,8 @@ def findTrips(_, records):
 
 if __name__ == __main__:
     sc = SparkContext() 
-    taxi = sc.textFile('yellow.csv.gz')
-    bike = sc.textFile('citibike.csv')  
+    taxi = sc.textFile('/data/share/bdm/yellow.csv.gz')
+    bike = sc.textFile('/data/share/bdm/citibike.csv')  
     
     gbike = bike.mapPartitionsWithIndex(filterBike).cache()
     gTaxi = taxi.mapPartitionsWithIndex(filterTaxi).cache()
